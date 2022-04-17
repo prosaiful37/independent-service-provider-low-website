@@ -1,0 +1,47 @@
+ [
+   
+    {
+        "id": 1,
+        "name": "Family Law",
+        "price": "300",
+        "description": "Family law deals with the branch of law pertaining to all matters that are related to family unit or other relations such as partnership, marriage, divorce and any other family matters.",
+        "img": "http://themeperfect.me/legalpress/assets/images/33-360x240.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Bankruptcy Law",
+        "price": "500",
+        "description": "Bankruptcy law is the area of federal law that handles situations related to bankrupt persons or businesses. Under the law, a person can file bankruptcy if they are unable to pay their dues in any way. There are different chapters of the bankruptcy.",
+        "img": "http://themeperfect.me/legalpress/assets/images/28-360x240.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Corporate Law",
+        "price": "450",
+        "description": "Today, many people are looking to start their own business. For this, they need to register their business or they might be accused of doing business illegally in the country. This is just one part of the business law.",
+        "img": "http://themeperfect.me/legalpress/assets/images/177-360x240.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Personal Injury Law",
+        "price": "400",
+        "description": "Personal Injury law is designed to provide protection and legal rights to the victims who have been physically, mentally or emotionally been injured die to the carelessness or wrongdoing of another party.",
+        "img": "http://themeperfect.me/legalpress/assets/images/22-360x240.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Civil Rights Law",
+        "price": "400",
+        "description": "Civil Rights are the basic rights that are provided by every citizen of the country according to the constitution. The law gives every citizen the right to practice his or her religion, speak freely and to live in the country without any discrimination.",
+        "img": "http://themeperfect.me/legalpress/assets/images/49-360x240.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Criminal Law",
+        "price": "400",
+        "description": "Criminal law deals with offences against the social order. Under the common law jurisdiction, crimes disturb the sovereign and it is up to the agents of the sovereign to prosecute those offenders. Criminal law is different from civil law.",
+        "img": "http://themeperfect.me/legalpress/assets/images/8-360x240.jpg"
+    }
+    
+
+]
