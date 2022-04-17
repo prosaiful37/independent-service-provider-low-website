@@ -1,10 +1,49 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button ,Form } from 'react-bootstrap';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import avater from '../../image/avater.png';
 
 const Login = () => {
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
     const navigate = useNavigate();
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useSignInWithEmailAndPassword(auth);
+
+    
+
+    if(user){
+        navigate('/');
+    }
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return (
+            <div>
+            <p>Error: {error.message}</p>
+            </div>
+        );
+    }
+
+    const handleSubmitForm = event =>{
+        event.preventDefault();
+
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+
+        signInWithEmailAndPassword(email, password)
+
+    }
 
 
 
@@ -16,20 +55,23 @@ const Login = () => {
     return (
         <div className='container w-100'>
         <h3 className='text-center mt-3'>LogIn to Continue</h3>
-            <Form className='w-75 mx-auto border mt-2 p-5 bg-info rounded'>
+            <Form onSubmit={handleSubmitForm} className='w-75 mx-auto border mt-2 p-5 bg-info rounded'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
-                <Button  variant="secondary" type="submit">
+
+                
+                    <Button  variant="secondary" type="submit">
                     Get Started
-                </Button>
+                    </Button>
+                
 
                 <p className='mt-3'>Dont't have an Account? <span className='text-light' style={{cursor: 'pointer'}} onClick={navigateRegister}>SIGN UP</span></p>
             </Form>
