@@ -5,7 +5,7 @@ import logo from '../../../image/logo1.png';
 
 const Header = () => {
     return (
-        <Navbar className='py-0' collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar className='py-0' collapseOnSelect expand="lg" bg="dark" variant="dark" >
             <Container >
                 <Navbar.Brand as={Link} to="/">
                     <img className='w-50 img-fluid' src={logo} alt="" />
