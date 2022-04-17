@@ -7,18 +7,18 @@ const Footer = () => {
     const today = new Date();
     const year = today.getFullYear()
     return (
-        <footer  className='bg-dark py-3'>
+        <footer  className='bg-dark py-3 mt-5'>
             <Container>
                 <Row>
                     <Col sm>
-                        <p className='text-light'>LegalPress Template Made by  
+                        <p className='text-light text-center'>LegalPress Template Made by  
                             <span className='ms-2'>
                                 <Link className='text-decoration-none ' to={'/'}>Lawyer</Link>
                             </span>
                         </p>
                     </Col>
                     <Col sm>
-                        <img className='w-50 h-80' src={mony} alt="" />
+                        <img className='w-50  img-fluid' src={mony} alt="" />
                     </Col>
                     <Col sm>
                     <p className='text-center text-white'>

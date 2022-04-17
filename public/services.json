@@ -11,7 +11,7 @@
         "id": 2,
         "name": "Bankruptcy Law",
         "price": "500",
-        "description": "Bankruptcy law is the area of federal law that handles situations related to bankrupt persons or businesses. Under the law, a person can file bankruptcy if they are unable to pay their dues in any way. There are different chapters of the bankruptcy.",
+        "description": "Bankruptcy law is the area of federal law that handles situations related to bankrupt persons or businesses. Under the law, a person can file bankruptcy if they are unable to pay their dues in any way.",
         "img": "http://themeperfect.me/legalpress/assets/images/28-360x240.jpg"
     },
     {
@@ -32,14 +32,14 @@
         "id": 5,
         "name": "Civil Rights Law",
         "price": "400",
-        "description": "Civil Rights are the basic rights that are provided by every citizen of the country according to the constitution. The law gives every citizen the right to practice his or her religion, speak freely and to live in the country without any discrimination.",
+        "description": "Civil Rights are the basic rights that are provided by every citizen of the country according to the constitution. The law gives every citizen the right to practice his or her religion.",
         "img": "http://themeperfect.me/legalpress/assets/images/49-360x240.jpg"
     },
     {
         "id": 6,
         "name": "Criminal Law",
         "price": "400",
-        "description": "Criminal law deals with offences against the social order. Under the common law jurisdiction, crimes disturb the sovereign and it is up to the agents of the sovereign to prosecute those offenders. Criminal law is different from civil law.",
+        "description": "Criminal law deals with offences against the social order. Under the common law jurisdiction, crimes disturb the sovereign and it is up to the agents of the sovereign to prosecute those offenders",
         "img": "http://themeperfect.me/legalpress/assets/images/8-360x240.jpg"
     }
     
