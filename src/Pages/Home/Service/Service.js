@@ -1,9 +1,16 @@
 import React from 'react';
-import { Button, Card, Col, Row } from 'react-bootstrap';
+import { Button, Card, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
 
 const Service = ({service}) => {
-    const {name, img, description, price} = service;
+    const {id, name, img, description, price} = service;
+    const navigate = useNavigate();
+
+    const navigateCheckOutPage = id => {
+        navigate(`/service/${id}`)
+    }
+
     return (
         <Col>
             <Card className=' shadow'>
@@ -14,8 +21,10 @@ const Service = ({service}) => {
                     <p>Price: <span className='text-danger'>${price}</span></p>
                     <p>{description}</p>
                 </Card.Text>
-                <Button variant="primary" size="lg">
-                    {name} <span><FaArrowRight></FaArrowRight></span>
+                <Button
+                    onClick={() => navigateCheckOutPage(id)}  
+                     variant="primary" size="lg">
+                    Book: {name}  <span><FaArrowRight></FaArrowRight></span>
                 </Button>{' '}
                 </Card.Body>
             </Card>

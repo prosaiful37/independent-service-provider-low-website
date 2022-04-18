@@ -5,6 +5,8 @@ import reg from '../../../image/reg.jpg'
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Swal from 'sweetalert2';
+import Loading from '../../Shared/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
     const [
@@ -19,8 +21,8 @@ const Register = () => {
         navigate('/');
     }
 
-    if (loading) {
-        return <p>Loading...</p>;
+    if (loading || sending) {
+        return <Loading></Loading>;
     }
 
     if (error || error1) {
@@ -51,10 +53,10 @@ const Register = () => {
         <Container>
             <Row>
                 <Col md={6} sm>
-                    <img className='w-75 img-fluid  mt-4 rounded' src={reg} alt="" />
+                    <img className='w-100 img-fluid  mt-4 rounded' src={reg} alt="" />
                 </Col>
                 <Col md={6} sm>
-                    <Form onSubmit={handleRegister} className=' p-5 mt-5 bg-dark text-light rounded shadow'>
+                    <Form onSubmit={handleRegister} className=' p-5 mt-5  text-dark rounded shadow'>
                         <h5>Registration info</h5>
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Control type="text" name='name' placeholder="Name" required />
@@ -73,6 +75,8 @@ const Register = () => {
                             Submit
                         </Button>
                         <p className='mt-3'>Already Have An Account? <span style={{cursor: 'pointer'}} className='text-primary register' onClick={loginNavigate}>Please Login</span></p>
+                        
+                        <SocialLogin></SocialLogin>
                     </Form>
                 </Col>
             </Row>
