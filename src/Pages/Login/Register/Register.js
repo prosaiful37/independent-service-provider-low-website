@@ -2,8 +2,9 @@ import React from 'react';
 import { Button, Col, Container, Form, FormGroup, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import reg from '../../../image/reg.jpg'
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import Swal from 'sweetalert2';
 
 const Register = () => {
     const [
@@ -12,8 +13,8 @@ const Register = () => {
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
-    const navigate = useNavigate();
-
+        const navigate = useNavigate();
+        const [sendEmailVerification, sending, error1] = useSendEmailVerification(auth);
     if(user){
         navigate('/');
     }
@@ -22,7 +23,7 @@ const Register = () => {
         return <p>Loading...</p>;
     }
 
-    if (error) {
+    if (error || error1) {
         return (
           <div>
             <p>Error: {error.message}</p>
@@ -31,14 +32,16 @@ const Register = () => {
       }
 
     //handle registration form
-    const handleRegister = event =>{
+    const handleRegister = async(event) =>{
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
         
 
-        createUserWithEmailAndPassword(email, password)
+        await createUserWithEmailAndPassword(email, password)
+        await sendEmailVerification();
+          Swal.fire('Sent email')
     }
     // navigate return to login page
     const loginNavigate = () => {

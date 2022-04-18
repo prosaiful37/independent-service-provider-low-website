@@ -3,7 +3,6 @@ import { Button ,Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import avater from '../../image/avater.png';
 
 const Login = () => {
     const emailRef = useRef('');
