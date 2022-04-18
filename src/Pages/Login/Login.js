@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { Button ,Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import auth from '../../firebase.init';
 
 const Login = () => {
@@ -15,6 +16,8 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(auth);
 
     
 
@@ -34,13 +37,34 @@ const Login = () => {
         );
     }
 
-    const handleSubmitForm = event =>{
+    const handleSubmitForm = async(event) =>{
         event.preventDefault();
 
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
         signInWithEmailAndPassword(email, password)
+
+    }
+
+    const hanldeResetPassword = async() => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+
+        if(email){
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Check your email',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+        else{
+            Swal.fire('Please Give you Email');
+        }
+          
+
 
     }
 
@@ -66,13 +90,13 @@ const Login = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
 
-                
+                <p className='mt-3'>Reset Password <span className='text-light' style={{cursor: 'pointer'}} onClick={hanldeResetPassword}>Forgot Password</span></p>
                     <Button  variant="secondary" type="submit">
                     Get Started
                     </Button>
                 
 
-                <p className='mt-3'>Dont't have an Account? <span className='text-light' style={{cursor: 'pointer'}} onClick={navigateRegister}>SIGN UP</span></p>
+                <p className='mt-3'>Dont't have an Account? <span className='text-light' style={{cursor: 'pointer'}} onClick={navigateRegister}>SIGN UP</span></p>  
             </Form>
             
             
