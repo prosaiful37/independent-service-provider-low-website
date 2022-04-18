@@ -31,31 +31,36 @@ const SocialLogin = () => {
 
     return (
         <Container>
+            <div className='d-flex align-items-center'>
+                <div style={{height: '1px'}} className='w-50 bg-secondary'></div>
+                <p className='mt-2 px-3'>or</p>
+                <div style={{height: '1px'}} className='w-50 bg-secondary'></div>
+            </div>
             <Row>
                 <Col sm={12} md={12}>
                     {errorElement}
-                    <Button 
+                    <button 
                         onClick={() => signInWithGoogle()}
-                        variant='secondary'  className='mt-3'>
-                        <img width={20} src={google} alt="" />
-                        <span className='text-white'>Continue with google</span>  
-                    </Button>
+                        style={{borderRadius: '50px'}} className='w-100 p-3 border-secondary mb-2'>
+                        <img style={{width: '25px', marginRight: '3px'}}  src={google} alt="" />
+                        <span className='fw-bold text-secondary' >CONTINUE WITH GOOGLE</span>  
+                    </button>
                 </Col>
                 <Col sm={12} md={12}>
-                    <Button 
+                    <button 
                         onClick={() => signInWithFacebook()}
-                        variant='secondary'  className='mt-3'>
-                        <img width={20} src={facebook} alt="" />
-                        <span className='text-white'>Continue with Facebook</span>  
-                    </Button>
+                        style={{borderRadius: '50px'}} className='w-100 p-3 border-secondary mb-2'>
+                        <img style={{width: '25px', marginRight: '3px'}}  src={facebook} alt="" />
+                        <span className='fw-bold text-secondary'>CONTINUE WITH FACEBOOK</span> 
+                    </button>
                 </Col>
                 <Col sm={12} md={12}>
-                    <Button 
+                    <button 
                         onClick={() => signInWithGithub()}
-                        variant='secondary'  className='mt-3'>
-                        <img width={20} src={github} alt="" />
-                        <span className='text-white'>Continue with Github</span>  
-                    </Button>
+                        style={{borderRadius: '50px'}} className='w-100 p-3 border-secondary'>
+                        <img style={{width: '25px', marginRight: '3px'}}  src={github} alt="" />
+                        <span className='fw-bold text-secondary'>CONTINUE WITH GITHUB</span> 
+                    </button>
                 </Col>
             </Row>
         </Container>

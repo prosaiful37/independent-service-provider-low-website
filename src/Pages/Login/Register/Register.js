@@ -56,7 +56,7 @@ const Register = () => {
                     <img className='w-100 img-fluid  mt-4 rounded' src={reg} alt="" />
                 </Col>
                 <Col md={6} sm>
-                    <Form onSubmit={handleRegister} className=' p-5 mt-5  text-dark rounded shadow'>
+                    <Form onSubmit={handleRegister} className=' p-5 mt-5  text-dark rounded '>
                         <h5>Registration info</h5>
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Control type="text" name='name' placeholder="Name" required />

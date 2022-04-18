@@ -2,10 +2,12 @@ import React, { useRef } from 'react';
 import { Button ,Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 import SocialLogin from './SocialLogin/SocialLogin';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -58,16 +60,11 @@ const Login = () => {
         await sendPasswordResetEmail(email);
 
         if(email){
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Check your email',
-                showConfirmButton: false,
-                timer: 1500
-            })
+            await sendPasswordResetEmail(email);
+            toast('Check Your email');
         }
         else{
-            Swal.fire('Please Give you Email');
+            toast('please give you email');
         }
           
 
@@ -104,9 +101,10 @@ const Login = () => {
                 <p className='mt-3'>Dont't have an Account? <span className='text-primary' style={{cursor: 'pointer'}} onClick={navigateRegister}>SIGN UP</span></p>
 
             </Form>
-            
+            <ToastContainer></ToastContainer>
             <div className='containr w-50 mx-auto'>
                 <SocialLogin></SocialLogin>
+
             </div>
               
             
