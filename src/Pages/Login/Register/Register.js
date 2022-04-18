@@ -43,7 +43,11 @@ const Register = () => {
 
         await createUserWithEmailAndPassword(email, password)
         await sendEmailVerification();
-          Swal.fire('Sent email')
+        Swal.fire(
+            'Check Your Email!',
+            'You clicked the button!',
+            'success'
+          )
     }
     // navigate return to login page
     const loginNavigate = () => {

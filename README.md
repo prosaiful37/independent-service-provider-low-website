@@ -1,10 +1,25 @@
-# Getting Started with Create React App
+# Getting Started with Lawyer website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Lawyer Project [Live link](https://law-simple-website.firebaseapp.com/).
 
-## Available Scripts
+## use website and step by step
 
-In the project directory, you can run:
+    <li>Initial setup in private repo</li>
+    <li>Use react router dom</li>
+    <li>Use react bootstrap</li>
+    <li>Firebase auth system implement</li>
+    <li>Use Font Awesome in react</li>
+    <li>Sweet alert add</li>
+    <li>Toaster in react use the project</li>
+
+
+
+
+
+
+
+
+
 
 ### `npm start`
 
