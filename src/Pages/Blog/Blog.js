@@ -14,7 +14,7 @@ const Blog = () => {
                     <div>
                         <h2>Difference between authorization and authentication?</h2>
                         <p> <span><b>Authorization:</b></span> Authorization actually controls how much I can access authentication resources.  Authentication is the process of submitting an email and password from authentication.  This means authorization will give full power.</p>
-                        <p> <span><b>Authentication:</b></span> authentication is my user name cardinal that is authentication.  authentication user name is identified and email is detected.  If the username and email and password are given correctly, authentication works.  The whole system works depending on AAA.</p>
+                        <p> <span><b>Authentication:</b></span> authentication is my user name cardinal that is authentication.  authentication user name is identified and email is detected.  If the username and email and password are given correctly, authentication works.  The whole system works depending on AAA. BBB</p>
                     </div>
                 </Col>
                 <Col sm={12} md={6}>
